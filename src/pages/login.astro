@@ -1,0 +1,165 @@
+---
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#00bdd6",
+              "background-light": "#f5f8f8",
+              "background-dark": "#0f2123",
+            },
+            fontFamily: {
+              display: ["Inter"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Login - Un Mandado</title>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display antialiased"
+  >
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden"
+    >
+      <!-- Header / Close Action -->
+      <div
+        class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between"
+      >
+        <div
+          class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center cursor-pointer"
+        >
+          <span class="material-symbols-outlined" style="font-size: 24px;"
+            >close</span
+          >
+        </div>
+      </div>
+      <!-- Hero / Branding Image -->
+      <div class="@container">
+        <div class="@[480px]:px-4 @[480px]:py-3">
+          <div
+            class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-background-light dark:bg-background-dark @[480px]:rounded-lg min-h-65 relative"
+            data-alt="Delicious golden Venezuelan empanadas on a plate"
+            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBiEg_YG067RhqmCi9_FUKtTq5zFVIYuLbHuHRrdCC0uiF25hYM6GLRfuY1tL0wfmw9qL9M0p_4BEflOTsFF079nyS3L_yIT8zLhe0t45LoDn0XZPQSgHXWNl3MYnVQEqR64BKpRw_8nF1ujsipNHNOIriT6rAPouU5CGnC6P-_UhaEFHz17Vks11-pOGyT4-N9-OeiDY42MQD58j4uP_VXiqmDTtEsWHq4Ex1QvP9hA_BNB_vPjWx1UoXkktTPmzjmRSIcL8Pnhm8");'
+          >
+            <div
+              class="absolute inset-0 bg-linear-to-t from-background-light dark:from-background-dark to-transparent"
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Welcome Text -->
+      <div class="px-4 pt-6 pb-2">
+        <h2
+          class="text-slate-900 dark:text-slate-100 tracking-tight text-[32px] font-bold leading-tight text-center"
+        >
+          Bienvenido de nuevo
+        </h2>
+        <p
+          class="text-slate-600 dark:text-slate-400 text-center mt-2 text-base"
+        >
+          Tus empanadas favoritas a un click de distancia.
+        </p>
+      </div>
+      <!-- Login Form -->
+      <div class="flex flex-col gap-4 px-4 py-6 max-w-120 mx-auto w-full">
+        <label class="flex flex-col w-full">
+          <p
+            class="text-slate-900 dark:text-slate-100 text-base font-semibold leading-normal pb-2"
+          >
+            Número de teléfono
+          </p>
+          <div class="flex w-full items-stretch rounded-lg shadow-sm">
+            <div
+              class="flex items-center justify-center px-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-l-lg border-r-0"
+            >
+              <span class="text-xl">🇻🇪</span>
+            </div>
+            <input
+              class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-slate-900 dark:text-slate-100 focus:outline-0 focus:ring-2 focus:ring-primary border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 h-14 placeholder:text-slate-400 p-3.75 rounded-r-lg text-lg font-medium tracking-wider"
+              placeholder="+58 412 000 0000"
+              type="tel"
+            />
+          </div>
+        </label>
+        <!-- Primary Action -->
+        <button
+          class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-primary text-slate-900 text-lg font-bold leading-normal tracking-wide shadow-lg shadow-primary/20 hover:scale-[0.98] transition-transform active:scale-95 mt-2"
+        >
+          <span class="truncate">Continuar</span>
+        </button>
+      </div>
+      <!-- Divider -->
+      <div class="flex items-center px-6 py-4 gap-4 max-w-120 mx-auto w-full">
+        <div class="h-px bg-slate-200 dark:bg-slate-700 flex-1"></div>
+        <span
+          class="text-slate-400 text-sm font-medium uppercase tracking-widest"
+          >o ingresa con</span
+        >
+        <div class="h-px bg-slate-200 dark:bg-slate-700 flex-1"></div>
+      </div>
+      <!-- Social Media / Secondary Options -->
+      <div class="flex flex-col gap-3 px-4 pb-10 max-w-120 mx-auto w-full">
+        <button
+          class="flex w-full items-center justify-center gap-3 rounded-xl h-14 border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 font-semibold transition-colors hover:bg-slate-50 dark:hover:bg-slate-700/50"
+        >
+          <span class="material-symbols-outlined text-red-500">mail</span>
+          <span>Continuar con Google</span>
+        </button>
+        <button
+          class="flex w-full items-center justify-center gap-3 rounded-xl h-14 border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 font-semibold transition-colors hover:bg-slate-50 dark:hover:bg-slate-700/50"
+        >
+          <span class="material-symbols-outlined text-blue-600"
+            >social_leaderboard</span
+          >
+          <span>Continuar con Facebook</span>
+        </button>
+      </div>
+      <!-- Footer Help -->
+      <div class="mt-auto px-4 py-6 text-center">
+        <p class="text-slate-500 dark:text-slate-400 text-sm">
+          ¿No tienes cuenta? <a
+            class="text-primary font-bold hover:underline"
+            href="#">Regístrate</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
