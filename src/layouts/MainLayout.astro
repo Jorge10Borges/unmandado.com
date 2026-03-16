@@ -1,0 +1,38 @@
+---
+import NavBarBottom from "../components/NavBarBottom.astro";
+import FloatingCartButton from "../components/FloatingCartButton.astro";
+import NavBar from "../components/NavBar.svelte";
+
+
+import "../styles/global.css";
+
+---
+
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Unmandado - Fast Food Delivery</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    
+  </head>
+  <body class="bg-background-light font-display text-slate-900 min-h-screen">
+    <!-- Header Section -->
+    <header class="sticky top-0 z-50 bg-background-light/80 backdrop-blur-md border-b border-primary/10">
+      <div class="flex flex-col w-full">
+        <div class="w-full">
+          <NavBar client:load />
+        </div>
+      </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-4 py-6 space-y-8 pb-32">
+      <slot />
+    </main>
+    <FloatingCartButton /> 
+    <NavBarBottom />
+  </body>
+</html>

@@ -1,17 +1,136 @@
 ---
+import MainLayout from "../layouts/MainLayout.astro";
+import Search from "../components/Search.astro";
+import Categories from "../components/Categories.astro";
+import ProductCard from "../components/ProductCard.astro";
+import Carousel from "../components/Carousel.svelte";
 
+const slides = [
+	{
+		src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCj3I5NFTDSzf9vUywljsdb6awjIw6eqH5FIm8Gmzpc0h56jTRgntH4Y-6HyZdnfp0TEFgUKMaaCTEQDCz8hNLggSmLs7yRXrXvJEPYcMyFvxwLlpSHH1rYdo5RVk4yBunm7j_y_LmjyZhAA1T5Pbm1Lf9v0bxYtdslDVdLxwumVbeS4Mn7Ph_ZRBG9UwR901gHLYLS-WUY0mRuX7ZEDWMMgt_iTkuqlk3FZA3vE598KiscNvv-qqC0fGlDr3YK2kipN_wWLG9M80I",
+		pill: "Oferta limitada",
+		title: "¡Empanadas 2x1!",
+		subtitle: "Compra una empanada de carne tradicional y llévate la segunda gratis.",
+		cta: "Pedir ahora"
+	},
+	{
+		src: "https://lh3.googleusercontent.com/aida-public/AB6AXuDDK5odAjbaWEpeVeGuIbS7_kiPUIp-2COAXhRVIzX_pCZ9fy57xeTtKc-9SYGJDk-SEe_hs2Njp9MWRP3bjKj8fV5-h70nO3oQkspORBt9k5lT7u-xUTJh0rnXaCoqHeW1eB5PDS4lV46POiPbZqvefB47F8tMmdRLRoUZDgunH5_v4XVTUPbjqP9XhFXrK8t6tXgYkSXblfCHjrUXr-1FGsdFGUPBjK7j6QJgnH7sIfON40PV_NSxGUVwgKY_FFF7ZNs2rxsh0Gg",
+		pill: "Popular",
+		title: "Arepa Reina Pepiada",
+		subtitle: "Ensalada de pollo con aguacate, cilantro y aderezo cremoso de lima.",
+		cta: "Agregar al carrito"
+	},
+	{
+		src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAgPEh_SmtWGlTzIJgtnQKmupAl68XGz8Baf615WcjW0sZNrH4MbEeW25lvF9veLpAnhl17f_AEua-VlETWPEZZ5-WsLQdbJS95ubrXbQlUs0x9VEsXwgJuxqahf3D_0aDtVmxKy28PjXOWeYBxYww7H8V6iGl3UOp-Ih8BkutW8RtizWFKJGJUIc20853s1ScPl23NHy2RyysAVrgcQJE-U9Jl2CevIbxZBCgXK8nCcMxHWpzvjAV0XguU7PBEDrWbFaPlmd1hGe0",
+		pill: "Refrescante",
+		title: "Jugos Naturales",
+		subtitle: "Frutas frescas de temporada, mezcladas a tu gusto. 100% natural.",
+		cta: "Agregar al carrito"
+	}
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout>
+	<Search />
+	<Categories />
+	<!-- Section: Featured Deals -->
+	<section>
+		<div class="flex items-center justify-between mb-4">
+			<h2 class="text-slate-900 dark:text-slate-100 text-2xl font-bold tracking-tight">Ofertas de hoy</h2>
+			<a class="text-primario font-semibold text-sm" href="#">Ver todo</a>
+		</div>
+		<Carousel client:load slides={slides} />
+	</section>
+	<!-- Section: Popular Items -->
+	<section>
+		<div class="flex items-center justify-between mb-4">
+			<h2 class="text-slate-900 dark:text-slate-100 text-2xl font-bold tracking-tight">Menú Popular</h2>
+		</div>
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+			<!-- Item 1 -->
+			<div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-primary/5 group">
+				<div class="h-48 overflow-hidden relative">
+					<img
+						class="w-full h-full object-cover transition-transform group-hover:scale-105"
+						data-alt="Stuffed Venezuelan style corn arepa"
+						src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDK5odAjbaWEpeVeGuIbS7_kiPUIp-2COAXhRVIzX_pCZ9fy57xeTtKc-9SYGJDk-SEe_hs2Njp9MWRP3bjKj8fV5-h70nO3oQkspORBt9k5lT7u-xUTJh0rnXaCoqHeW1eB5PDS4lV46POiPbZqvefB47F8tMmdRLRoUZDgunH5_v4XVTUPbjqP9XhFXrK8t6tXgYkSXblfCHjrUXr-1FGsdFGUPBjK7j6QJgnH7sIfON40PV_NSxGUVwgKY_FFF7ZNs2rxsh0Gg"
+					/>
+					<div class="absolute top-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-md">
+						<span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
+						<span class="text-xs font-bold">4.8</span>
+					</div>
+				</div>
+				<div class="p-4">
+					<div class="flex justify-between items-start mb-1">
+						<h3 class="font-bold text-lg">Arepa Reina Pepiada</h3>
+						<span class="text-primary font-bold">$7.50</span>
+					</div>
+					<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">Ensalada de pollo con aguacate, cilantro y aderezo cremoso de lima.</p>
+					<button
+						class="w-full bg-primary text-white font-bold py-2.5 rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
+						><span class="material-symbols-outlined text-lg">add_shopping_cart</span> Agregar al carrito</button
+					>
+				</div>
+			</div>
+			<!-- Item 2 -->
+			<div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-primary/5 group">
+				<div class="h-48 overflow-hidden relative">
+					<img
+						class="w-full h-full object-cover transition-transform group-hover:scale-105"
+						data-alt="Gourmet loaded hot dog with toppings"
+						src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVbLfNL3Pd-dA74mz7fgvepMQHOFCBVviadSjTbbv4cIlmJJBl2pXuz3d0d2HEafWcF33sF-LITM2o-3Im6OPXKUFY_xXQI_jIKl7J_okVU7hVcKqSYAZbNR4LbJaOhMSD5qoXWzTFcq4eRBBTD63549ca6koU1dqpyVbe333HHFgjbfOQct1swWsjNeQ73J7jb6KLEdvz3yH0s1JagBgXtVGjyzjFv1uY9za8FUc9umvcU6WYxkzA7tjYVpqyDHFstwVBxsGWpU4"
+					/>
+					<div class="absolute top-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-md">
+						<span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
+						<span class="text-xs font-bold">4.9</span>
+					</div>
+				</div>
+				<div class="p-4">
+					<div class="flex justify-between items-start mb-1">
+						<h3 class="font-bold text-lg">Perro Caliente Especial</h3>
+						<span class="text-primary font-bold">$6.90</span>
+					</div>
+					<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">Cargado con papas trituradas, salsa de piña y salsa rosada.</p>
+					<button
+						class="w-full bg-primary text-white font-bold py-2.5 rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
+						><span class="material-symbols-outlined text-lg">add_shopping_cart</span> Agregar al carrito</button
+					>
+				</div>
+			</div>
+			<!-- Item 3 -->
+			<div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-primary/5 group">
+				<div class="h-48 overflow-hidden relative">
+					<img
+						class="w-full h-full object-cover transition-transform group-hover:scale-105"
+						data-alt="Freshly squeezed tropical orange juice"
+						src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgPEh_SmtWGlTzIJgtnQKmupAl68XGz8Baf615WcjW0sZNrH4MbEeW25lvF9veLpAnhl17f_AEua-VlETWPEZZ5-WsLQdbJS95ubrXbQlUs0x9VEsXwgJuxqahf3D_0aDtVmxKy28PjXOWeYBxYww7H8V6iGl3UOp-Ih8BkutW8RtizWFKJGJUIc20853s1ScPl23NHy2RyysAVrgcQJE-U9Jl2CevIbxZBCgXK8nCcMxHWpzvjAV0XguU7PBEDrWbFaPlmd1hGe0"
+					/>
+					<div class="absolute top-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-md">
+						<span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
+						<span class="text-xs font-bold">4.7</span>
+					</div>
+				</div>
+				<div class="p-4">
+					<div class="flex justify-between items-start mb-1">
+						<h3 class="font-bold text-lg">Jugos Naturales</h3>
+						<span class="text-primary font-bold">$4.20</span>
+					</div>
+					<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">Frutas frescas de temporada, mezcladas a tu gusto. 100% natural.</p>
+					<button
+						class="w-full bg-primary text-white font-bold py-2.5 rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
+						><span class="material-symbols-outlined text-lg">add_shopping_cart</span> Agregar al carrito</button
+					>
+				</div>
+			</div>
+			<ProductCard 
+				id="item4" 
+				title="Arepa de Queso" 
+				description="Arepa rellena de queso derretido, perfecta para los amantes del queso." 
+				price="6.50" 
+				imageUrl="https://lh3.googleusercontent.com/aida-public/AB6AXuCj3I5NFTDSzf9vUywljsdb6awjIw6eqH5FIm8Gmzpc0h56jTRgntH4Y-6HyZdnfp0TEFgUKMaaCTEQDCz8hNLggSmLs7yRXrXvJEPYcMyFvxwLlpSHH1rYdo5RVk4yBunm7j_y_LmjyZhAA1T5Pbm1Lf9v0bxYtdslDVdLxwumVbeS4Mn7Ph_ZRBG9UwR901gHLYLS-WUY0mRuX7ZEDWMMgt_iTkuqlk3FZA3vE598KiscNvv-qqC0fGlDr3YK2kipN_wWLG9M80I" 
+				rating="4.6"
+		  />
+		</div>
+	</section>
+</MainLayout>
+	

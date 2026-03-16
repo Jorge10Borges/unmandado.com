@@ -1,202 +1,243 @@
+---
 import "../styles/global.css";
+---
 
-<!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Unmandado - Fast Food Delivery</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#00bdd6",
-                        "background-light": "#f5f8f8",
-                        "background-dark": "#0f2123",
-                    },
-                    fontFamily: {
-                        "display": ["Inter"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                },
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Unmandado - Fast Food Delivery</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#00bdd6",
+              "background-light": "#f5f8f8",
+              "background-dark": "#0f2123",
             },
-        }
+            fontFamily: {
+              display: ["Inter"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
     </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .active-tab {
-            background-color: #00bdd6;
-            color: white;
-        }
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .active-tab {
+        background-color: #00bdd6;
+        color: white;
+      }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-</head>
-<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
-<!-- Header Section -->
-<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
-<div class="flex items-center p-4 justify-between max-w-7xl mx-auto w-full">
-<div class="text-primary flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-<span class="material-symbols-outlined">menu</span>
-</div>
-<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight flex-1 text-center">Unmandado.com</h2>
-<div class="flex w-10 items-center justify-end">
-<button class="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-<span class="material-symbols-outlined">person</span>
-</button>
-</div>
-</div>
-<!-- Search Bar -->
-<div class="px-4 py-3 max-w-7xl mx-auto w-full">
-<label class="flex flex-col min-w-40 h-12 w-full">
-<div class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-sm">
-<div class="text-primary flex border-none bg-white dark:bg-slate-800 items-center justify-center pl-4 rounded-l-xl">
-<span class="material-symbols-outlined">search</span>
-</div>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-xl text-slate-900 dark:text-slate-100 focus:outline-0 focus:ring-0 border-none bg-white dark:bg-slate-800 h-full placeholder:text-slate-400 px-4 pl-2 text-base font-normal leading-normal" placeholder="Buscar empanadas, arepas, jugos..."/>
-</div>
-</label>
-</div>
-<!-- Categories -->
-<div class="flex gap-3 px-4 pb-4 overflow-x-auto no-scrollbar max-w-7xl mx-auto w-full">
-<div class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full active-tab px-6 shadow-sm cursor-pointer transition-colors">
-<span class="text-sm font-semibold">Empanadas</span>
-</div>
-<div class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-6 shadow-sm cursor-pointer hover:bg-primary/10 transition-colors">
-<span class="text-sm font-semibold">Hot Dogs</span>
-</div>
-<div class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-6 shadow-sm cursor-pointer hover:bg-primary/10 transition-colors">
-<span class="text-sm font-semibold">Arepas</span>
-</div>
-<div class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-6 shadow-sm cursor-pointer hover:bg-primary/10 transition-colors">
-<span class="text-sm font-semibold">Jugos</span>
-</div>
-</div>
-</header>
-<main class="max-w-7xl mx-auto px-4 py-6 space-y-8 pb-32">
-<!-- Section: Featured Deals -->
-<section>
-<div class="flex items-center justify-between mb-4">
-<h2 class="text-slate-900 dark:text-slate-100 text-2xl font-bold tracking-tight">Ofertas de hoy</h2>
-<a class="text-primary font-semibold text-sm" href="#">Ver todo</a>
-</div>
-<div class="relative overflow-hidden rounded-2xl aspect-[21/9] bg-primary">
-<div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex flex-col justify-center px-8 text-white">
-<span class="bg-white/20 backdrop-blur-md w-fit px-3 py-1 rounded-full text-xs font-bold mb-2 uppercase tracking-widest">Oferta limitada</span>
-<h3 class="text-3xl font-black mb-2 leading-tight">¡Empanadas 2x1!</h3>
-<p class="text-white/80 font-medium max-w-xs mb-4">Compra una empanada de carne tradicional y llévate la segunda gratis.</p>
-<button class="bg-white text-primary font-bold py-2 px-6 rounded-lg w-fit shadow-lg">Pedir ahora</button>
-</div>
-<img class="w-full h-full object-cover" data-alt="Delicious golden brown fried beef empanadas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj3I5NFTDSzf9vUywljsdb6awjIw6eqH5FIm8Gmzpc0h56jTRgntH4Y-6HyZdnfp0TEFgUKMaaCTEQDCz8hNLggSmLs7yRXrXvJEPYcMyFvxwLlpSHH1rYdo5RVk4yBunm7j_y_LmjyZhAA1T5Pbm1Lf9v0bxYtdslDVdLxwumVbeS4Mn7Ph_ZRBG9UwR901gHLYLS-WUY0mRuX7ZEDWMMgt_iTkuqlk3FZA3vE598KiscNvv-qqC0fGlDr3YK2kipN_wWLG9M80I"/>
-</div>
-</section>
-<!-- Section: Popular Items -->
-<section>
-<div class="flex items-center justify-between mb-4">
-<h2 class="text-slate-900 dark:text-slate-100 text-2xl font-bold tracking-tight">Menú Popular</h2>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-<!-- Item 1 -->
-<div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-primary/5 group">
-<div class="h-48 overflow-hidden relative">
-<img class="w-full h-full object-cover transition-transform group-hover:scale-105" data-alt="Stuffed Venezuelan style corn arepa" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDK5odAjbaWEpeVeGuIbS7_kiPUIp-2COAXhRVIzX_pCZ9fy57xeTtKc-9SYGJDk-SEe_hs2Njp9MWRP3bjKj8fV5-h70nO3oQkspORBt9k5lT7u-xUTJh0rnXaCoqHeW1eB5PDS4lV46POiPbZqvefB47F8tMmdRLRoUZDgunH5_v4XVTUPbjqP9XhFXrK8t6tXgYkSXblfCHjrUXr-1FGsdFGUPBjK7j6QJgnH7sIfON40PV_NSxGUVwgKY_FFF7ZNs2rxsh0Gg"/>
-<div class="absolute top-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-md">
-<span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
-<span class="text-xs font-bold">4.8</span>
-</div>
-</div>
-<div class="p-4">
-<div class="flex justify-between items-start mb-1">
-<h3 class="font-bold text-lg">Arepa Reina Pepiada</h3>
-<span class="text-primary font-bold">$7.50</span>
-</div>
-<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">Ensalada de pollo con aguacate, cilantro y aderezo cremoso de lima.</p>
-<button class="w-full bg-primary text-white font-bold py-2.5 rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"><span class="material-symbols-outlined text-lg">add_shopping_cart</span> Agregar al carrito</button>
-</div>
-</div>
-<!-- Item 2 -->
-<div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-primary/5 group">
-<div class="h-48 overflow-hidden relative">
-<img class="w-full h-full object-cover transition-transform group-hover:scale-105" data-alt="Gourmet loaded hot dog with toppings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVbLfNL3Pd-dA74mz7fgvepMQHOFCBVviadSjTbbv4cIlmJJBl2pXuz3d0d2HEafWcF33sF-LITM2o-3Im6OPXKUFY_xXQI_jIKl7J_okVU7hVcKqSYAZbNR4LbJaOhMSD5qoXWzTFcq4eRBBTD63549ca6koU1dqpyVbe333HHFgjbfOQct1swWsjNeQ73J7jb6KLEdvz3yH0s1JagBgXtVGjyzjFv1uY9za8FUc9umvcU6WYxkzA7tjYVpqyDHFstwVBxsGWpU4"/>
-<div class="absolute top-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-md">
-<span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
-<span class="text-xs font-bold">4.9</span>
-</div>
-</div>
-<div class="p-4">
-<div class="flex justify-between items-start mb-1">
-<h3 class="font-bold text-lg">Perro Caliente Especial</h3>
-<span class="text-primary font-bold">$6.90</span>
-</div>
-<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">Cargado con papas trituradas, salsa de piña y salsa rosada.</p>
-<button class="w-full bg-primary text-white font-bold py-2.5 rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"><span class="material-symbols-outlined text-lg">add_shopping_cart</span> Agregar al carrito</button>
-</div>
-</div>
-<!-- Item 3 -->
-<div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-primary/5 group">
-<div class="h-48 overflow-hidden relative">
-<img class="w-full h-full object-cover transition-transform group-hover:scale-105" data-alt="Freshly squeezed tropical orange juice" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgPEh_SmtWGlTzIJgtnQKmupAl68XGz8Baf615WcjW0sZNrH4MbEeW25lvF9veLpAnhl17f_AEua-VlETWPEZZ5-WsLQdbJS95ubrXbQlUs0x9VEsXwgJuxqahf3D_0aDtVmxKy28PjXOWeYBxYww7H8V6iGl3UOp-Ih8BkutW8RtizWFKJGJUIc20853s1ScPl23NHy2RyysAVrgcQJE-U9Jl2CevIbxZBCgXK8nCcMxHWpzvjAV0XguU7PBEDrWbFaPlmd1hGe0"/>
-<div class="absolute top-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-md">
-<span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
-<span class="text-xs font-bold">4.7</span>
-</div>
-</div>
-<div class="p-4">
-<div class="flex justify-between items-start mb-1">
-<h3 class="font-bold text-lg">Jugos Naturales</h3>
-<span class="text-primary font-bold">$4.20</span>
-</div>
-<p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">Frutas frescas de temporada, mezcladas a tu gusto. 100% natural.</p>
-<button class="w-full bg-primary text-white font-bold py-2.5 rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"><span class="material-symbols-outlined text-lg">add_shopping_cart</span> Agregar al carrito</button>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Floating Cart Button -->
-<div class="fixed bottom-24 right-6 z-50">
-<button class="bg-primary text-white size-16 rounded-full shadow-xl flex items-center justify-center group">
-<div class="relative">
-<span class="material-symbols-outlined text-3xl">shopping_bag</span>
-<span class="absolute -top-2 -right-2 bg-slate-900 text-white text-[10px] font-bold size-5 flex items-center justify-center rounded-full border-2 border-primary">3</span>
-</div>
-</button>
-</div>
-<!-- Bottom Navigation -->
-<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-primary/10 px-4 pb-6 pt-2 z-50">
-<div class="flex items-center justify-between max-w-lg mx-auto">
-<a class="flex flex-col items-center gap-1 flex-1 text-primary" href="#">
-<span class="material-symbols-outlined fill-1">restaurant_menu</span>
-<span class="text-[10px] font-bold uppercase tracking-wider">MENÚ</span>
-</a>
-<a class="flex flex-col items-center gap-1 flex-1 text-slate-400 dark:text-slate-500" href="#">
-<span class="material-symbols-outlined">receipt_long</span>
-<span class="text-[10px] font-bold uppercase tracking-wider">PEDIDOS</span>
-</a>
-<a class="flex flex-col items-center gap-1 flex-1 text-slate-400 dark:text-slate-500" href="#">
-<span class="material-symbols-outlined">local_offer</span>
-<span class="text-[10px] font-bold uppercase tracking-wider">OFERTAS</span>
-</a>
-<a class="flex flex-col items-center gap-1 flex-1 text-slate-400 dark:text-slate-500" href="#">
-<span class="material-symbols-outlined">person</span>
-<span class="text-[10px] font-bold uppercase tracking-wider">PERFIL</span>
-</a>
-</div>
-</nav>
-</body></html>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+    <!-- Header Section -->
+    <header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+      <div class="flex items-center p-4 justify-between max-w-7xl mx-auto w-full">
+        <div class="text-primary flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+          <span class="material-symbols-outlined">menu</span>
+        </div>
+        <h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight flex-1 text-center">Unmandado.com</h2>
+        <div class="flex w-10 items-center justify-end">
+          <button class="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <span class="material-symbols-outlined">person</span>
+          </button>
+        </div>
+      </div>
+      <!-- Search Bar -->
+      <div class="px-4 py-3 max-w-7xl mx-auto w-full">
+        <label class="flex flex-col min-w-40 h-12 w-full">
+          <div class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-sm">
+            <div class="text-primary flex border-none bg-white dark:bg-slate-800 items-center justify-center pl-4 rounded-l-xl">
+              <span class="material-symbols-outlined">search</span>
+            </div>
+            <input
+              class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-xl text-slate-900 dark:text-slate-100 focus:outline-0 focus:ring-0 border-none bg-white dark:bg-slate-800 h-full placeholder:text-slate-400 px-4 pl-2 text-base font-normal leading-normal"
+              placeholder="Buscar empanadas, arepas, jugos..."
+            />
+          </div>
+        </label>
+      </div>
+      <!-- Categories -->
+      <div class="flex gap-3 px-4 pb-4 overflow-x-auto no-scrollbar max-w-7xl mx-auto w-full">
+        <div class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full active-tab px-6 shadow-sm cursor-pointer transition-colors">
+          <span class="text-sm font-semibold">Empanadas</span>
+        </div>
+        <div
+          class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-6 shadow-sm cursor-pointer hover:bg-primary/10 transition-colors">
+          <span class="text-sm font-semibold">Hot Dogs</span>
+        </div>
+        <div
+          class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-6 shadow-sm cursor-pointer hover:bg-primary/10 transition-colors">
+          <span class="text-sm font-semibold">Arepas</span>
+        </div>
+        <div
+          class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-6 shadow-sm cursor-pointer hover:bg-primary/10 transition-colors">
+          <span class="text-sm font-semibold">Jugos</span>
+        </div>
+      </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-4 py-6 space-y-8 pb-32">
+      <!-- Section: Featured Deals -->
+      <section>
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-slate-900 dark:text-slate-100 text-2xl font-bold tracking-tight">Ofertas de hoy</h2>
+          <a class="text-primary font-semibold text-sm" href="#">Ver todo</a>
+        </div>
+        <div class="relative overflow-hidden rounded-2xl aspect-21/9 bg-primary">
+          <div class="absolute inset-0 bg-linear-to-r from-black/60 to-transparent flex flex-col justify-center px-8 text-white">
+            <span class="bg-white/20 backdrop-blur-md w-fit px-3 py-1 rounded-full text-xs font-bold mb-2 uppercase tracking-widest">Oferta limitada</span>
+            <h3 class="text-3xl font-black mb-2 leading-tight">¡Empanadas 2x1!</h3>
+            <p class="text-white/80 font-medium max-w-xs mb-4">Compra una empanada de carne tradicional y llévate la segunda gratis.</p>
+            <button class="bg-white text-primary font-bold py-2 px-6 rounded-lg w-fit shadow-lg">Pedir ahora</button>
+          </div>
+          <img
+            class="w-full h-full object-cover"
+            data-alt="Delicious golden brown fried beef empanadas"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj3I5NFTDSzf9vUywljsdb6awjIw6eqH5FIm8Gmzpc0h56jTRgntH4Y-6HyZdnfp0TEFgUKMaaCTEQDCz8hNLggSmLs7yRXrXvJEPYcMyFvxwLlpSHH1rYdo5RVk4yBunm7j_y_LmjyZhAA1T5Pbm1Lf9v0bxYtdslDVdLxwumVbeS4Mn7Ph_ZRBG9UwR901gHLYLS-WUY0mRuX7ZEDWMMgt_iTkuqlk3FZA3vE598KiscNvv-qqC0fGlDr3YK2kipN_wWLG9M80I"
+          />
+        </div>
+      </section>
+      <!-- Section: Popular Items -->
+      <section>
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-slate-900 dark:text-slate-100 text-2xl font-bold tracking-tight">Menú Popular</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Item 1 -->
+          <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-primary/5 group">
+            <div class="h-48 overflow-hidden relative">
+              <img
+                class="w-full h-full object-cover transition-transform group-hover:scale-105"
+                data-alt="Stuffed Venezuelan style corn arepa"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDK5odAjbaWEpeVeGuIbS7_kiPUIp-2COAXhRVIzX_pCZ9fy57xeTtKc-9SYGJDk-SEe_hs2Njp9MWRP3bjKj8fV5-h70nO3oQkspORBt9k5lT7u-xUTJh0rnXaCoqHeW1eB5PDS4lV46POiPbZqvefB47F8tMmdRLRoUZDgunH5_v4XVTUPbjqP9XhFXrK8t6tXgYkSXblfCHjrUXr-1FGsdFGUPBjK7j6QJgnH7sIfON40PV_NSxGUVwgKY_FFF7ZNs2rxsh0Gg"
+              />
+              <div class="absolute top-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-md">
+                <span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
+                <span class="text-xs font-bold">4.8</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex justify-between items-start mb-1">
+                <h3 class="font-bold text-lg">Arepa Reina Pepiada</h3>
+                <span class="text-primary font-bold">$7.50</span>
+              </div>
+              <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">Ensalada de pollo con aguacate, cilantro y aderezo cremoso de lima.</p>
+              <button
+                class="w-full bg-primary text-white font-bold py-2.5 rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
+                ><span class="material-symbols-outlined text-lg">add_shopping_cart</span> Agregar al carrito</button
+              >
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-primary/5 group">
+            <div class="h-48 overflow-hidden relative">
+              <img
+                class="w-full h-full object-cover transition-transform group-hover:scale-105"
+                data-alt="Gourmet loaded hot dog with toppings"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVbLfNL3Pd-dA74mz7fgvepMQHOFCBVviadSjTbbv4cIlmJJBl2pXuz3d0d2HEafWcF33sF-LITM2o-3Im6OPXKUFY_xXQI_jIKl7J_okVU7hVcKqSYAZbNR4LbJaOhMSD5qoXWzTFcq4eRBBTD63549ca6koU1dqpyVbe333HHFgjbfOQct1swWsjNeQ73J7jb6KLEdvz3yH0s1JagBgXtVGjyzjFv1uY9za8FUc9umvcU6WYxkzA7tjYVpqyDHFstwVBxsGWpU4"
+              />
+              <div class="absolute top-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-md">
+                <span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
+                <span class="text-xs font-bold">4.9</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex justify-between items-start mb-1">
+                <h3 class="font-bold text-lg">Perro Caliente Especial</h3>
+                <span class="text-primary font-bold">$6.90</span>
+              </div>
+              <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">Cargado con papas trituradas, salsa de piña y salsa rosada.</p>
+              <button
+                class="w-full bg-primary text-white font-bold py-2.5 rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
+                ><span class="material-symbols-outlined text-lg">add_shopping_cart</span> Agregar al carrito</button
+              >
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-primary/5 group">
+            <div class="h-48 overflow-hidden relative">
+              <img
+                class="w-full h-full object-cover transition-transform group-hover:scale-105"
+                data-alt="Freshly squeezed tropical orange juice"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgPEh_SmtWGlTzIJgtnQKmupAl68XGz8Baf615WcjW0sZNrH4MbEeW25lvF9veLpAnhl17f_AEua-VlETWPEZZ5-WsLQdbJS95ubrXbQlUs0x9VEsXwgJuxqahf3D_0aDtVmxKy28PjXOWeYBxYww7H8V6iGl3UOp-Ih8BkutW8RtizWFKJGJUIc20853s1ScPl23NHy2RyysAVrgcQJE-U9Jl2CevIbxZBCgXK8nCcMxHWpzvjAV0XguU7PBEDrWbFaPlmd1hGe0"
+              />
+              <div class="absolute top-3 right-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1 shadow-md">
+                <span class="material-symbols-outlined text-yellow-500 text-sm fill-1">star</span>
+                <span class="text-xs font-bold">4.7</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex justify-between items-start mb-1">
+                <h3 class="font-bold text-lg">Jugos Naturales</h3>
+                <span class="text-primary font-bold">$4.20</span>
+              </div>
+              <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">Frutas frescas de temporada, mezcladas a tu gusto. 100% natural.</p>
+              <button
+                class="w-full bg-primary text-white font-bold py-2.5 rounded-xl flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors"
+                ><span class="material-symbols-outlined text-lg">add_shopping_cart</span> Agregar al carrito</button
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Floating Cart Button -->
+    <div class="fixed bottom-24 right-6 z-50">
+      <button class="bg-primary text-white size-16 rounded-full shadow-xl flex items-center justify-center group">
+        <div class="relative">
+          <span class="material-symbols-outlined text-3xl">shopping_bag</span>
+          <span
+            class="absolute -top-2 -right-2 bg-slate-900 text-white text-[10px] font-bold size-5 flex items-center justify-center rounded-full border-2 border-primary"
+            >3</span
+          >
+        </div>
+      </button>
+    </div>
+    <!-- Bottom Navigation -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-primary/10 px-4 pb-6 pt-2 z-50">
+      <div class="flex items-center justify-between max-w-lg mx-auto">
+        <a class="flex flex-col items-center gap-1 flex-1 text-primary" href="#">
+          <span class="material-symbols-outlined fill-1">restaurant_menu</span>
+          <span class="text-[10px] font-bold uppercase tracking-wider">MENÚ</span>
+        </a>
+        <a class="flex flex-col items-center gap-1 flex-1 text-slate-400 dark:text-slate-500" href="#">
+          <span class="material-symbols-outlined">receipt_long</span>
+          <span class="text-[10px] font-bold uppercase tracking-wider">PEDIDOS</span>
+        </a>
+        <a class="flex flex-col items-center gap-1 flex-1 text-slate-400 dark:text-slate-500" href="#">
+          <span class="material-symbols-outlined">local_offer</span>
+          <span class="text-[10px] font-bold uppercase tracking-wider">OFERTAS</span>
+        </a>
+        <a class="flex flex-col items-center gap-1 flex-1 text-slate-400 dark:text-slate-500" href="#">
+          <span class="material-symbols-outlined">person</span>
+          <span class="text-[10px] font-bold uppercase tracking-wider">PERFIL</span>
+        </a>
+      </div>
+    </nav>
+  </body>
+</html>
