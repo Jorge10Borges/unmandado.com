@@ -1,12 +1,17 @@
 ---
 export interface Product {
-  name: string;
+  name?: string;
   description?: string;
-  price: number;
+  price?: number;
   image?: string;
 }
 
-export let product: Product = { name: '', description: '', price: 0, image: '' };
+export let name: string = '';
+export let description: string = '';
+export let price: number = 0;
+export let image: string = '';
+
+const product: Product = { name, description, price, image };
 ---
 <!-- Product Card: Marisco -->
 <div class="flex gap-4 p-3 bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-primary/5">
