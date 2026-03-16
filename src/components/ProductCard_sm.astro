@@ -15,14 +15,14 @@ const product: Product = { name, description, price, image };
 ---
 <!-- Product Card: Marisco -->
 <div class="flex gap-4 p-3 bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-primary/5">
-  <div class="w-24 h-24 rounded-lg bg-cover bg-center shrink-0" style={`background-image: url('${product?.image ?? ''}')`}></div>
+    <div class="w-24 h-24 rounded-lg bg-cover bg-center shrink-0" style={`background-image: url('${image ?? ''}')`}></div>
   <div class="flex flex-col justify-between flex-1">
     <div>
-      <h4 class="font-bold text-slate-900 dark:text-slate-100">{product?.name}</h4>
-      <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">{product?.description}</p>
+          <h4 class="font-bold text-slate-900 dark:text-slate-100">{name}</h4>
+          <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">{description}</p>
     </div>
     <div class="flex items-center justify-between mt-2">
-    <span class="text-primary font-bold">{ '$' + (product?.price ?? 0).toFixed(2) }</span>
+        <span class="text-primary font-bold">{ '$' + (price ?? 0).toFixed(2) }</span>
       <button class="bg-primary hover:bg-primary/90 text-white p-1 rounded-lg flex items-center justify-center">
         <span class="material-symbols-outlined">add</span>
       </button>
