@@ -1,0 +1,189 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout>
+  <!-- Hero Section -->
+  <section class="@container px-4 py-4">
+    <div class="relative overflow-hidden rounded-xl h-56 bg-primary/20">
+      <div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(0deg, rgba(15, 33, 35, 0.8) 0%, rgba(15, 33, 35, 0.2) 60%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdbtOb_1puig9lp9VMU1c9nPQnxensMiTn3aWa9hqtnML0y6Zfce_jjph9KBD9ALe1MTTJxnj7XDzVktEWBaoJhCKBD-7mJcob6YQbDyn7krL91WGfcBZPgl3LUYolgIV3gHoeCXqy64mcuDA4bQBWl4TseXwPyurqM7MW9rcDuLtyU9bgQdmBH7EVaopyyZlbKUMFXYFb-uxOa5vS2WtCPOIbvJfPISzRT51hE8K65a9T_IS9gYDlVzRdazClOn8aTltH3IYn2lM');"></div>
+      <div class="absolute bottom-0 left-0 p-6">
+        <span class="bg-primary text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block uppercase tracking-wider">Especialidad</span>
+        <h2 class="text-3xl font-bold text-white leading-tight">Empanadas Venezolanas de Maíz</h2>
+        <p class="text-slate-200 text-sm mt-1">Sabor auténtico y crujiente en cada mordida.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Tab -->
+  <nav class="sticky top-[68px] z-40 bg-surface-light dark:bg-surface-dark border-b border-primary/10 shadow-sm">
+    <div class="flex px-4 overflow-x-auto no-scrollbar">
+      <a class="flex-none px-6 py-4 text-sm font-bold active-tab transition-colors" href="#de-la-casa">De la Casa</a>
+      <a class="flex-none px-6 py-4 text-sm font-bold text-slate-500 dark:text-slate-400 border-b-3 border-transparent hover:text-primary transition-colors" href="#tradicionales">Tradicionales</a>
+      <a class="flex-none px-6 py-4 text-sm font-bold text-slate-500 dark:text-slate-400 border-b-3 border-transparent hover:text-primary transition-colors" href="#bebidas">Bebidas</a>
+      <a class="flex-none px-6 py-4 text-sm font-bold text-slate-500 dark:text-slate-400 border-b-3 border-transparent hover:text-primary transition-colors" href="#combos">Combos</a>
+    </div>
+  </nav>
+
+  <!-- Menu Sections -->
+  <main class="space-y-10">
+    <!-- De la Casa Section -->
+    <section id="de-la-casa">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+          <span class="w-1.5 h-6 bg-primary rounded-full"></span>
+          De la Casa
+        </h3>
+      </div>
+      <div class="grid gap-4">
+        <!-- Product Card: Marisco -->
+        <div class="flex gap-4 p-3 bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-primary/5">
+          <div class="w-24 h-24 rounded-lg bg-cover bg-center shrink-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBxD_P0KV6hBfqWJkw5ALu6dmw7azEAKPrKTAEbkRLz9TUchZtvdlmKEkB-u8eRXUFIMt5Ck9bNu-05kfrgvtkFL93ZT_dVaIyTYbRFJe0czYsRnOjR__GJEZKIY8oWZVljyd7RvoYNkXdeRcW5aklIg4SwCEvFs0gA6TPmpU1y-j3m5Ntgwb6O3jEVoFeEGatKGOIhJnQdVzU0xiUWdjU5yhCHbvuW79LzEbmZVCxphYhmaj0auAN1XrJVvIKlprKRlKobt5mUyw0');"></div>
+          <div class="flex flex-col justify-between flex-1">
+            <div>
+              <h4 class="font-bold text-slate-900 dark:text-slate-100">Marisco</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">Mezcla premium de camarones, calamares y sofrito caribeño.</p>
+            </div>
+            <div class="flex items-center justify-between mt-2">
+              <span class="text-primary font-bold">$4.50</span>
+              <button class="bg-primary hover:bg-primary/90 text-white p-1 rounded-lg flex items-center justify-center">
+                <span class="material-symbols-outlined">add</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card: Hallaca -->
+        <div class="flex gap-4 p-3 bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-primary/5">
+          <div class="w-24 h-24 rounded-lg bg-cover bg-center shrink-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBQ0amJ-27643Cy7RBIOJC8timJjJ5374iCZam1E77QvXpyFmmTIA1yEk9aF9NnBqL73F_9tiE1xNiba9ZreZTlcadEvJkRywUAmmRmtA-BXzKTY1mnmivEixKOxL5trFeLPJgLhaQcLNJsqy8GwmPkcWhiuh6slnATeugqAcDR3nc_tGpylTDjS76w1T5Gza9_iB9vKADUnAbROhI3Jlmulog-FHp9z868OBwOpR3wggcHp3mDN35AJU3qSBofMAqJHZCe1ygwdoM');"></div>
+          <div class="flex flex-col justify-between flex-1">
+            <div>
+              <h4 class="font-bold text-slate-900 dark:text-slate-100">Hallaca <span class="text-[10px] bg-success/10 text-success px-1.5 py-0.5 rounded ml-1 uppercase">Nuevo</span></h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">Inspirada en nuestro plato navideño. Guiso de tres carnes.</p>
+            </div>
+            <div class="flex items-center justify-between mt-2">
+              <span class="text-primary font-bold">$5.00</span>
+              <button class="bg-primary hover:bg-primary/90 text-white p-1 rounded-lg flex items-center justify-center">
+                <span class="material-symbols-outlined">add</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tradicionales Section -->
+    <section id="tradicionales">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+          <span class="w-1.5 h-6 bg-primary rounded-full"></span>
+          Tradicionales
+        </h3>
+      </div>
+      <div class="grid gap-4">
+        <!-- Carne Mechada -->
+        <div class="flex gap-4 p-3 bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-primary/5">
+          <div class="w-24 h-24 rounded-lg bg-slate-200 dark:bg-slate-700 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-slate-400 text-3xl">restaurant</span>
+          </div>
+          <div class="flex flex-col justify-between flex-1">
+            <div>
+              <h4 class="font-bold text-slate-900 dark:text-slate-100">Carne Mechada</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Carne de res desmechada lentamente en su jugo.</p>
+            </div>
+            <div class="flex items-center justify-between mt-2">
+              <span class="text-primary font-bold">$3.50</span>
+              <button class="bg-primary hover:bg-primary/90 text-white p-1 rounded-lg flex items-center justify-center">
+                <span class="material-symbols-outlined">add</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Queso Amarillo -->
+        <div class="flex gap-4 p-3 bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-primary/5">
+          <div class="w-24 h-24 rounded-lg bg-slate-200 dark:bg-slate-700 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-slate-400 text-3xl">chess</span>
+          </div>
+          <div class="flex flex-col justify-between flex-1">
+            <div>
+              <h4 class="font-bold text-slate-900 dark:text-slate-100">Queso Amarillo</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Generosa porción de queso amarillo fundido.</p>
+            </div>
+            <div class="flex items-center justify-between mt-2">
+              <span class="text-primary font-bold">$3.00</span>
+              <button class="bg-primary hover:bg-primary/90 text-white p-1 rounded-lg flex items-center justify-center">
+                <span class="material-symbols-outlined">add</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pabellón -->
+        <div class="flex gap-4 p-3 bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-primary/5">
+          <div class="w-24 h-24 rounded-lg bg-slate-200 dark:bg-slate-700 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-slate-400 text-3xl">flatware</span>
+          </div>
+          <div class="flex flex-col justify-between flex-1">
+            <div>
+              <h4 class="font-bold text-slate-900 dark:text-slate-100">Pabellón</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Carne mechada, caraotas negras, tajadas y queso.</p>
+            </div>
+            <div class="flex items-center justify-between mt-2">
+              <span class="text-primary font-bold">$4.00</span>
+              <button class="bg-primary hover:bg-primary/90 text-white p-1 rounded-lg flex items-center justify-center">
+                <span class="material-symbols-outlined">add</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bebidas Section -->
+    <section id="bebidas">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+          <span class="w-1.5 h-6 bg-primary rounded-full"></span>
+          Bebidas
+        </h3>
+      </div>
+      <div class="grid gap-4">
+        <!-- Papelón con Limón -->
+        <div class="flex gap-4 p-3 bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-primary/5">
+          <div class="w-24 h-24 rounded-lg bg-cover bg-center shrink-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtJ2w1CstK67nLw6nQv_M-tY58u_VpL6yWk5M5V3Z9V4r2N1k5m8z_L6J5V4R2M1u8-V5M3Z9V4R2N1k5m8z_L6J5V4R2M1u8');"></div>
+          <div class="flex flex-col justify-between flex-1">
+            <div>
+              <h4 class="font-bold text-slate-900 dark:text-slate-100">Papelón con Limón</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">Refrescante bebida tradicional de papelón y limón natural, servida con mucho hielo.</p>
+            </div>
+            <div class="flex items-center justify-between mt-2">
+              <span class="text-primary font-bold">$2.50</span>
+              <button class="bg-primary hover:bg-primary/90 text-white p-1 rounded-lg flex items-center justify-center">
+                <span class="material-symbols-outlined">add</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Malta -->
+        <div class="flex gap-4 p-3 bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-primary/5">
+          <div class="w-24 h-24 rounded-lg bg-cover bg-center shrink-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD_X_P0KV6hBfqWJkw5ALu6dmw7azEAKPrKTAEbkRLz9TUchZtvdlmKEkB-u8eRXUFIMt5Ck9bNu-05kfrgvtkFL93ZT_dVaIyTYbRFJe0czYsRnOjR__GJEZKIY8oWZVljyd7RvoYNkXdeRcW5aklIg4SwCEvFs0gA6TPmpU1y-j3m5Ntgwb6O3jEVoFeEGatKGOIhJnQdVzU0xiUWdjU5yhCHbvuW79LzEbmZVCxphYhmaj0auAN1XrJVvIKlprKRlKobt5mUyw0');"></div>
+          <div class="flex flex-col justify-between flex-1">
+            <div>
+              <h4 class="font-bold text-slate-900 dark:text-slate-100">Malta</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">La clásica malta venezolana, dulce y espumosa, el complemento perfecto para tu empanada.</p>
+            </div>
+            <div class="flex items-center justify-between mt-2">
+              <span class="text-primary font-bold">$2.00</span>
+              <button class="bg-primary hover:bg-primary/90 text-white p-1 rounded-lg flex items-center justify-center">
+                <span class="material-symbols-outlined">add</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</MainLayout>
