@@ -1,10 +1,10 @@
 <script>
   import { onMount } from 'svelte';
-  let titulo = 'Unmandado.com';
+  let titulo = 'UnMandado.com';
 
   onMount(() => {
     const t = setTimeout(() => {
-      titulo = 'close';
+      titulo = 'UnMandado.com';
     }, 2000);
     return () => clearTimeout(t);
   });

@@ -1,29 +1,28 @@
 ---
+import ProductCard_sm from "../components/ProductCard_sm.svelte";
 import MainLayout from "../layouts/MainLayout.astro";
+import HeroProductCard from "../components/HeroProductCard.svelte";
+import CategoriesTab from "../components/CategoriesTab.svelte";
 ---
 
 <MainLayout>
   <!-- Hero Section -->
-  <section class="@container px-4 py-4">
-    <div class="relative overflow-hidden rounded-xl h-56 bg-primary/20">
-      <div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(0deg, rgba(15, 33, 35, 0.8) 0%, rgba(15, 33, 35, 0.2) 60%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdbtOb_1puig9lp9VMU1c9nPQnxensMiTn3aWa9hqtnML0y6Zfce_jjph9KBD9ALe1MTTJxnj7XDzVktEWBaoJhCKBD-7mJcob6YQbDyn7krL91WGfcBZPgl3LUYolgIV3gHoeCXqy64mcuDA4bQBWl4TseXwPyurqM7MW9rcDuLtyU9bgQdmBH7EVaopyyZlbKUMFXYFb-uxOa5vS2WtCPOIbvJfPISzRT51hE8K65a9T_IS9gYDlVzRdazClOn8aTltH3IYn2lM');"></div>
-      <div class="absolute bottom-0 left-0 p-6">
-        <span class="bg-primary text-white text-xs font-bold px-2 py-1 rounded mb-2 inline-block uppercase tracking-wider">Especialidad</span>
-        <h2 class="text-3xl font-bold text-white leading-tight">Empanadas Venezolanas de Maíz</h2>
-        <p class="text-slate-200 text-sm mt-1">Sabor auténtico y crujiente en cada mordida.</p>
-      </div>
-    </div>
-  </section>
+  <HeroProductCard
+    badget="Especialidad"
+    titulo="Empanadas Venezolanas de Maíz"
+    subtitulo="Sabor auténtico y crujiente en cada mordida."
+    image="https://instagram.fccs3-2.fna.fbcdn.net/v/t51.71878-15/536458628_1491140608683679_6002514892179138795_n.jpg?stp=dst-jpg_e15_tt6&_nc_cat=111&ig_cache_key=MzcwMzY3MTUyNTA1Mjg1NDQ1Mg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjY0MHgxMTM2LnNkci5DMyJ9&_nc_ohc=vewf2BLit6EQ7kNvwHu31Gx&_nc_oc=Adk7Gblhy1kwThxVMtSHIE2j9aIkbOc3H0XzrsaSdbBA7PqAFz0ZAS-5ctvJm3gODvQ&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fccs3-2.fna&_nc_gid=GeTLbafblmtt85cyI2cfew&_nc_ss=8&oh=00_AfzER3cwA6m2IjrQimlDPrv3fLyJlwe4RdwrrQuhYcbEtg&oe=69BE66D5"
+  />
 
   <!-- Categories Tab -->
-  <nav class="sticky top-[68px] z-40 bg-surface-light dark:bg-surface-dark border-b border-primary/10 shadow-sm">
-    <div class="flex px-4 overflow-x-auto no-scrollbar">
-      <a class="flex-none px-6 py-4 text-sm font-bold active-tab transition-colors" href="#de-la-casa">De la Casa</a>
-      <a class="flex-none px-6 py-4 text-sm font-bold text-slate-500 dark:text-slate-400 border-b-3 border-transparent hover:text-primary transition-colors" href="#tradicionales">Tradicionales</a>
-      <a class="flex-none px-6 py-4 text-sm font-bold text-slate-500 dark:text-slate-400 border-b-3 border-transparent hover:text-primary transition-colors" href="#bebidas">Bebidas</a>
-      <a class="flex-none px-6 py-4 text-sm font-bold text-slate-500 dark:text-slate-400 border-b-3 border-transparent hover:text-primary transition-colors" href="#combos">Combos</a>
-    </div>
-  </nav>
+  <CategoriesTab
+    Links={[
+      { title: 'De la Casa', href: '#de-la-casa', active: true },
+      { title: 'Tradicionales', href: '#tradicionales', active: false },
+      { title: 'Bebidas', href: '#bebidas', active: false },
+      { title: 'Combos', href: '#combos', active: false },
+    ]} 
+  />
 
   <!-- Menu Sections -->
   <main class="space-y-10">
@@ -36,6 +35,34 @@ import MainLayout from "../layouts/MainLayout.astro";
         </h3>
       </div>
       <div class="grid gap-4">
+        <ProductCard_sm
+          name="Marisco"
+          description="Cada empanada es elaborada a mano, con masa crujiente y rellenos generosos que te harán querer más."
+          price={4.5}
+          image="https://instagram.fccs3-1.fna.fbcdn.net/v/t51.82787-15/649232906_17932091910198799_7542842205636399550_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ig_cache_key=MzYzOTIwNDQwMjAyMTE0MzE5NQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=LQ8-2Hb4tWkQ7kNvwGns_if&_nc_oc=Adke8UTdhmq9AKyeZqOhbEvlsqLs_HGr4KuKo8vvRLtH6Qp2pNetvRofVrzc_mWUp2A&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fccs3-1.fna&_nc_gid=LJW25asZ-YGKpPuml7YRDQ&_nc_ss=8&oh=00_Afx3Tx6R6xxYnjt-bbe7KqWepKeu4_KVBMAtU8qKd1Lx3g&oe=69BE6C28",
+          isNew={true}
+        />
+
+        <ProductCard_sm
+          name="Hallaca"
+          description="Te traemos las empanadas más deliciosas, hechas con ingredientes frescos y recetas tradicionales que han pasado de generación e generación."
+          price={5.0}
+          image="https://instagram.fccs3-1.fna.fbcdn.net/v/t51.29350-15/500471284_710435628216387_3955003677356526766_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=107&ig_cache_key=MzYzOTIwNDQwMjI0NzYwNTk5MA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuZGVmYXVsdF9pbWFnZS5DMyJ9&_nc_ohc=XzzM5pN_I4EQ7kNvwEtUFDs&_nc_oc=Adn8P2WFUTYuXTGTlh3n6ZJRfVmMqYf15AEzU9Bxeps_Q-GzsMWo1uNcpbSkdFeYzss&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fccs3-1.fna&_nc_gid=LJW25asZ-YGKpPuml7YRDQ&_nc_ss=8&oh=00_AfxQKfjf9WvaG0UcLwImWplHYwgshmEjK1yJX0D7A6tljg&oe=69BE46D1https://instagram.fccs3-1.fna.fbcdn.net/v/t51.29350-15/500471284_710435628216387_3955003677356526766_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=107&ig_cache_key=MzYzOTIwNDQwMjI0NzYwNTk5MA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuZGVmYXVsdF9pbWFnZS5DMyJ9&_nc_ohc=XzzM5pN_I4EQ7kNvwEtUFDs&_nc_oc=Adn8P2WFUTYuXTGTlh3n6ZJRfVmMqYf15AEzU9Bxeps_Q-GzsMWo1uNcpbSkdFeYzss&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fccs3-1.fna&_nc_gid=LJW25asZ-YGKpPuml7YRDQ&_nc_ss=8&oh=00_AfxQKfjf9WvaG0UcLwImWplHYwgshmEjK1yJX0D7A6tljg&oe=69BE46D1"
+        />
+
+        <ProductCard_sm
+          name="Hallaca"
+          description="Inspirada en nuestro plato navideño. Guiso de tres carnes."
+          price={5.0}
+          image="https://instagram.fccs3-1.fna.fbcdn.net/v/t51.75761-15/496519251_17851735176446441_1776156848886302865_n.webp?_nc_cat=105&ig_cache_key=MzYzMDMwNzU2NDc3Nzk2NTkwMw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTA4MC5zZHIuQzMifQ%3D%3D&_nc_ohc=6fsT7d8xFKIQ7kNvwG0124t&_nc_oc=Adk-s8qnb1sq0Ic0OLbt4b6KGY7SVXZkgI3xVr32QhovY3gc3YyBu8D33-XoGGYswis&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fccs3-1.fna&_nc_gid=LJW25asZ-YGKpPuml7YRDQ&_nc_ss=8&oh=00_AfwrW7W5Y9JK173ZdXUl873pe0misBLKwjoeX-Hj_3mqew&oe=69BE71F7"
+        />
+
+        <ProductCard_sm
+          name="Hallaca"
+          description="Inspirada en nuestro plato navideño. Guiso de tres carnes."
+          price={5.0}
+          image="https://instagram.fccs3-1.fna.fbcdn.net/v/t51.29350-15/503303282_1019198526866720_1393121910999873813_n.heic?stp=dst-jpg_e35_tt6&_nc_cat=103&ig_cache_key=MzY0NzgyODgzOTUzNjU0NDY1MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuZGVmYXVsdF9pbWFnZS5DMyJ9&_nc_ohc=Dvuvt-1DWLMQ7kNvwEjalV0&_nc_oc=AdkMU3EXa4txLe4d2TPa34gBRDv16BPp58-J1ODCxQMxKbVtOEH6snL4o1chHmAC_pM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fccs3-1.fna&_nc_gid=LJW25asZ-YGKpPuml7YRDQ&_nc_ss=8&oh=00_AfyOj6kYNXM-FtNiMnamFD3XzEqXJcEZwURngtBf-3hktA&oe=69BE74F6"
+        />
         <!-- Product Card: Marisco -->
         <div class="flex gap-4 p-3 bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm border border-primary/5">
           <div class="w-24 h-24 rounded-lg bg-cover bg-center shrink-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBxD_P0KV6hBfqWJkw5ALu6dmw7azEAKPrKTAEbkRLz9TUchZtvdlmKEkB-u8eRXUFIMt5Ck9bNu-05kfrgvtkFL93ZT_dVaIyTYbRFJe0czYsRnOjR__GJEZKIY8oWZVljyd7RvoYNkXdeRcW5aklIg4SwCEvFs0gA6TPmpU1y-j3m5Ntgwb6O3jEVoFeEGatKGOIhJnQdVzU0xiUWdjU5yhCHbvuW79LzEbmZVCxphYhmaj0auAN1XrJVvIKlprKRlKobt5mUyw0');"></div>
@@ -58,7 +85,7 @@ import MainLayout from "../layouts/MainLayout.astro";
           <div class="w-24 h-24 rounded-lg bg-cover bg-center shrink-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBQ0amJ-27643Cy7RBIOJC8timJjJ5374iCZam1E77QvXpyFmmTIA1yEk9aF9NnBqL73F_9tiE1xNiba9ZreZTlcadEvJkRywUAmmRmtA-BXzKTY1mnmivEixKOxL5trFeLPJgLhaQcLNJsqy8GwmPkcWhiuh6slnATeugqAcDR3nc_tGpylTDjS76w1T5Gza9_iB9vKADUnAbROhI3Jlmulog-FHp9z868OBwOpR3wggcHp3mDN35AJU3qSBofMAqJHZCe1ygwdoM');"></div>
           <div class="flex flex-col justify-between flex-1">
             <div>
-              <h4 class="font-bold text-slate-900 dark:text-slate-100">Hallaca <span class="text-[10px] bg-success/10 text-success px-1.5 py-0.5 rounded ml-1 uppercase">Nuevo</span></h4>
+              <h4 class="font-bold text-slate-900 dark:text-slate-100">Hallaca <span class="text-[10px] bg-primary text-white px-1.5 py-0.5 rounded ml-1 uppercase">Nuevo</span></h4>
               <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">Inspirada en nuestro plato navideño. Guiso de tres carnes.</p>
             </div>
             <div class="flex items-center justify-between mt-2">

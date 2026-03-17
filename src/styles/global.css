@@ -12,10 +12,6 @@ html, body {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
-.active-tab {
-  background-color: #00bdd6;
-  color: white;
-}
 
 body {
   min-height: max(884px, 100dvh);
@@ -38,4 +34,5 @@ body {
   --color-secondary-active: #15803D;
   --color-secondary-light: #D1FAE5;
   --color-secondary-dark: #15803D;
+  --color-surface-light: #FFFFFF;
 }
