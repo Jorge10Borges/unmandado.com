@@ -6,6 +6,8 @@ import SvgSprite from "../components/SvgSprite.astro";
 
 
 import "../styles/global.css";
+const pathname = new URL(Astro.request.url).pathname;
+
 
 ---
 
@@ -35,7 +37,7 @@ import "../styles/global.css";
     <main class="max-w-7xl mx-auto px-4 py-6 space-y-8 pb-32">
       <slot />
     </main>
-    <FloatingCartButton /> 
-    <NavBarBottom />
+    <!-- <FloatingCartButton />  -->
+      <NavBarBottom page={pathname} />
   </body>
 </html>

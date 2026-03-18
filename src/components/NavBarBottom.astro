@@ -1,22 +1,27 @@
 ---
 const icons = [
-  { id: 'restaurant_menu', label: 'MENÚ', active: true },
-  { id: 'receipt_long', label: 'PEDIDOS', active: false },
-  { id: 'local_offer', label: 'OFERTAS', active: false },
-  { id: 'person', label: 'PERFIL', active: false },
+  { id: 'restaurant_menu', label: 'MENÚ', page: 'dashboard', active: true, notification: false },
+  { id: 'receipt_long', label: 'PEDIDOS', page: 'orders', active: false, notification: false },
+  { id: 'local_offer', label: 'OFERTAS', page: 'offers', active: false, notification: false },
+  { id: 'info', label: 'INFO', page: 'info', active: false, notification: false },
+  { id: 'shopping_cart', label: 'CARRITO', page: 'cart', active: false, notification: true },
 ];
 
+export let page = 'dashboard';
 ---
 
 <!-- Bottom Navigation -->
 <nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-primary/10 px-4 pb-6 pt-2 z-50">
   <div class="flex items-center justify-between max-w-lg mx-auto">
     {icons.map((icon) => (
-      <a class={`flex flex-col items-center gap-1 flex-1 ${icon.active ? 'text-primary' : 'text-slate-400 '}`} href="#" key={icon.id}>
+      <a class={`relative flex flex-col items-center gap-1 flex-1 ${icon.page == page ? 'text-primary' : 'text-slate-400 '}`} href={`/${icon.page}`} >
         <svg class="w-6 h-6" aria-hidden="true">
           <use href={`#${icon.id}`} />
         </svg>
         <span class="text-[10px] font-bold uppercase tracking-wider">{icon.label}</span>
+        {icon.notification && (
+          <span class="absolute top-0 right-5 inline-block w-1.5 h-1.5 bg-red-500 rounded-full"></span>
+        )}
       </a>
     ))}
   </div>
