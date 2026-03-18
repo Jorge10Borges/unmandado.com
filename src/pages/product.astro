@@ -1,0 +1,122 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+const product = {
+  title: "Gran Hallaca",
+  price: "$5.50",
+  rating: "4.9 (120+ reseñas)",
+  description:
+    "Masa de maíz crujiente rellena con un guiso premium de carne de res, cerdo y pollo, decorado con pasas dulces, alcaparras y aceitunas, recreando el sabor auténtico de la navidad venezolana.",
+  image:
+    "https://lh3.googleusercontent.com/aida-public/AB6AXuCObvPPCxeJpkOwzGDupBYQUCCPkCAkodUwuDjxxNmBh4LpopriAdxgm-lU2UyXXDWxOvOPrVszOIGmG9c6h4kdogdg4LWqcKZZEKs6FcK1u5-xCR9opP7vdcV7L6qqHD-Poepw2ulPZN6Wvgzs3QC-HEvCT4PvZSowc2-vdg2u5QIgokJJ_6L4x74e7qTh8YqXW6zaMVi4HsuejeU3lfsdUta16pF6jsYwYZHpz78369O11ljvEm2KYhayJvXHqjpraZtVGx6Z360",
+};
+---
+
+<MainLayout>
+  <main class="flex-1 pb-32">
+    <div class="@container max-w-2xl mx-auto">
+      <div class="@[480px]:px-4 @[480px]:py-6">
+        <div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden aspect-square @[480px]:rounded-xl shadow-lg"
+             role="img" aria-label={product.title}
+             style={`background-image: url('${product.image}')`}>
+        </div>
+      </div>
+
+      <div class="px-4 pt-6">
+        <div class="flex justify-between items-start mb-2">
+          <h1 class="text-slate-900 dark:text-slate-100 text-3xl font-bold leading-tight">{product.title}</h1>
+          <span class="text-primary text-2xl font-bold">{product.price}</span>
+        </div>
+
+        <div class="flex items-center gap-1 mb-4">
+          <span class="material-symbols-outlined text-yellow-500 text-sm">star</span>
+          <span class="text-sm font-medium text-slate-600 dark:text-slate-400">{product.rating}</span>
+        </div>
+
+        <div class="mb-8">
+          <h3 class="text-slate-900 dark:text-slate-100 font-bold mb-2">Ingredientes Tradicionales</h3>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed">{product.description}</p>
+        </div>
+
+        <div class="space-y-6">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-slate-900 dark:text-slate-100 font-bold">Elige tu salsa (Opcional)</h3>
+              <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full uppercase tracking-wider font-semibold">Selección</span>
+            </div>
+
+            <div class="grid grid-cols-1 gap-3">
+              <label class="flex items-center justify-between p-4 rounded-xl border border-primary/20 bg-primary/5 cursor-pointer hover:border-primary transition-colors">
+                <div class="flex items-center gap-3">
+                  <div class="size-5 rounded-full border-2 border-primary flex items-center justify-center">
+                    <div class="size-2.5 bg-primary rounded-full"></div>
+                  </div>
+                  <span class="font-medium">Salsa de Ajo</span>
+                </div>
+                <span class="text-slate-500 dark:text-slate-400 text-sm">Gratis</span>
+              </label>
+
+              <label class="flex items-center justify-between p-4 rounded-xl border border-slate-200 dark:border-slate-800 cursor-pointer hover:border-primary transition-colors">
+                <div class="flex items-center gap-3">
+                  <div class="size-5 rounded-full border-2 border-slate-300 dark:border-slate-600"></div>
+                  <span class="font-medium">Guasacaca</span>
+                </div>
+                <span class="text-slate-500 dark:text-slate-400 text-sm">Gratis</span>
+              </label>
+
+              <label class="flex items-center justify-between p-4 rounded-xl border border-slate-200 dark:border-slate-800 cursor-pointer hover:border-primary transition-colors">
+                <div class="flex items-center gap-3">
+                  <div class="size-5 rounded-full border-2 border-slate-300 dark:border-slate-600"></div>
+                  <span class="font-medium">Picante</span>
+                </div>
+                <span class="text-slate-500 dark:text-slate-400 text-sm">Gratis</span>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-slate-900 dark:text-slate-100 font-bold mb-3">Instrucciones especiales</h3>
+            <textarea class="w-full rounded-xl border-slate-200 dark:border-slate-800 bg-transparent focus:border-primary focus:ring-primary placeholder:text-slate-400" placeholder="Ej: Sin aceitunas, bien tostada..." rows="3"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="fixed bottom-0 left-0 right-0 z-50 bg-background-light dark:bg-background-dark border-t border-primary/10 px-4 pt-4 pb-8 max-w-2xl mx-auto w-full">
+      <div class="flex items-center gap-4 mb-4">
+        <div class="flex items-center border border-slate-200 dark:border-slate-800 rounded-full p-1 bg-white dark:bg-slate-900">
+          <button class="size-10 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-primary">
+            <span class="material-symbols-outlined">remove</span>
+          </button>
+          <span class="w-10 text-center font-bold">1</span>
+          <button class="size-10 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-primary">
+            <span class="material-symbols-outlined">add</span>
+          </button>
+        </div>
+
+        <button class="flex-1 bg-primary text-white h-12 rounded-full font-bold shadow-lg shadow-primary/30 hover:brightness-110 active:scale-[0.98] transition-all">
+          Agregar al carrito
+        </button>
+      </div>
+
+      <nav class="flex gap-2 justify-around">
+        <a class="flex flex-col items-center gap-1 text-primary" href="/">
+          <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">home</span>
+          <p class="text-[10px] font-medium leading-none">Inicio</p>
+        </a>
+        <a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+          <span class="material-symbols-outlined">search</span>
+          <p class="text-[10px] font-medium leading-none">Buscar</p>
+        </a>
+        <a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+          <span class="material-symbols-outlined">shopping_cart</span>
+          <p class="text-[10px] font-medium leading-none">Carrito</p>
+        </a>
+        <a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+          <span class="material-symbols-outlined">person</span>
+          <p class="text-[10px] font-medium leading-none">Perfil</p>
+        </a>
+      </nav>
+    </footer>
+  </main>
+</MainLayout>

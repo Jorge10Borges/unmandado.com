@@ -7,6 +7,7 @@
       background-color: #00bdd6;
       color: white;
     }
+
 </style>
 
 <!-- Categories Tab -->
@@ -16,7 +17,7 @@
       <a
         class={link.active
           ? "flex-none px-6 py-4 text-sm font-bold active-tab transition-colors"
-          : "flex-none px-6 py-4 text-sm font-bold text-slate-500 dark:text-slate-400 border-b-3 border-transparent hover:text-primary transition-colors"}
+          : "flex-none px-6 py-4 text-sm font-bold text-slate-500 border-b-3 border-transparent hover:text-white hover:bg-primary-active transition-colors"}
         href={link.href}
       >
         {link.title}
