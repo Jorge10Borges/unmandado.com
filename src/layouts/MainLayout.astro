@@ -3,14 +3,17 @@ import NavBarBottom from "../components/NavBarBottom.astro";
 import FloatingCartButton from "../components/FloatingCartButton.astro";
 import NavBar from "../components/NavBar.svelte";
 import SvgSprite from "../components/SvgSprite.astro";
-
+import Search from "../components/Search.svelte";
+import Clock from "../components/Clock.svelte";
 
 import "../styles/global.css";
-const pathname = new URL(Astro.request.url).pathname;
 
-
+const pathname = typeof Astro !== 'undefined' && Astro.request ? new URL(Astro.request.url).pathname : '/';
+export let ShowSearch = true;
 ---
-
+<script>
+  
+</script>
 <!doctype html>
 <html class="light" lang="en">
   <head>
@@ -30,7 +33,13 @@ const pathname = new URL(Astro.request.url).pathname;
     <header class="sticky top-0 z-50 bg-background-light/80 backdrop-blur-md border-b border-primary/10">
       <div class="flex flex-col w-full">
         <div class="w-full">
-          <NavBar client:load />
+          <div class="flex items-center justify-between">
+            <NavBar client:load />
+            <div class="ml-4 hidden md:flex items-center">
+              <Clock client:load currentPath={pathname} />
+            </div>
+          </div>
+          {ShowSearch && <Search client:load />}
         </div>
       </div>
     </header>
@@ -38,6 +47,6 @@ const pathname = new URL(Astro.request.url).pathname;
       <slot />
     </main>
     <!-- <FloatingCartButton />  -->
-      <NavBarBottom page={pathname} />
+      <NavBarBottom/>
   </body>
 </html>
