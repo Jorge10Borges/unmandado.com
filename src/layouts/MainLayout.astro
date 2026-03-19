@@ -1,19 +1,12 @@
 ---
 import NavBarBottom from "../components/NavBarBottom.astro";
 import FloatingCartButton from "../components/FloatingCartButton.astro";
-import NavBar from "../components/NavBar.svelte";
 import SvgSprite from "../components/SvgSprite.astro";
-import Search from "../components/Search.svelte";
-import Clock from "../components/Clock.svelte";
-
+import Header from "../components/Header.astro";
 import "../styles/global.css";
 
-const pathname = typeof Astro !== 'undefined' && Astro.request ? new URL(Astro.request.url).pathname : '/';
-export let ShowSearch = true;
 ---
-<script>
-  
-</script>
+
 <!doctype html>
 <html class="light" lang="en">
   <head>
@@ -30,19 +23,7 @@ export let ShowSearch = true;
     <!-- Reusable inline sprite component -->
     <SvgSprite />
     <!-- Header Section -->
-    <header class="sticky top-0 z-50 bg-background-light/80 backdrop-blur-md border-b border-primary/10">
-      <div class="flex flex-col w-full">
-        <div class="w-full">
-          <div class="flex items-center justify-between">
-            <NavBar client:load />
-            <div class="ml-4 hidden md:flex items-center">
-              <Clock client:load currentPath={pathname} />
-            </div>
-          </div>
-          {ShowSearch && <Search client:load />}
-        </div>
-      </div>
-    </header>
+    <Header client:load showSearch={false} />
     <main class="max-w-7xl mx-auto px-4 py-6 space-y-8 pb-32">
       <slot />
     </main>
